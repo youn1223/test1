@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-c37278270084f659353a6bf5dfba6b3d"}, "mark": {"type": "line", "color": "#2b5c8f", "point": true, "strokeWidth": 3}, "encoding": {"tooltip": [{"field": "order_month", "title": "\uc8fc\ubb38 \uc6d4", "type": "nominal"}, {"field": "total_revenue", "format": ",.0f", "title": "\ucd1d \ub9e4\ucd9c (\uc6d0)", "type": "quantitative"}], "x": {"field": "order_month", "title": "\uc8fc\ubb38 \uc6d4", "type": "nominal"}, "y": {"field": "total_revenue", "title": "\ucd1d \ub9e4\ucd9c\uc561 (\uc6d0)", "type": "quantitative"}}, "height": 300, "params": [{"name": "param_1e9efca18e7a2868", "select": {"type": "interval", "encodings": ["x", "y"]}, "bind": "scales"}], "title": "\uc6d4\ubcc4 \ucd1d \ub9e4\ucd9c \ucd94\uc774 (Altair)", "width": 600, "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json", "datasets": {"data-c37278270084f659353a6bf5dfba6b3d": [{"order_month": "2025-01", "total_revenue": 21703825068.0}, {"order_month": "2025-02", "total_revenue": 19670640422.0}, {"order_month": "2025-03", "total_revenue": 21651460185.0}, {"order_month": "2025-04", "total_revenue": 20834233072.0}, {"order_month": "2025-05", "total_revenue": 21759589869.0}, {"order_month": "2025-06", "total_revenue": 21033277001.0}, {"order_month": "2025-07", "total_revenue": 21549021954.0}, {"order_month": "2025-08", "total_revenue": 21637510658.0}, {"order_month": "2025-09", "total_revenue": 21081206127.0}, {"order_month": "2025-10", "total_revenue": 21596650479.0}, {"order_month": "2025-11", "total_revenue": 21081291858.0}, {"order_month": "2025-12", "total_revenue": 21605528055.0}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

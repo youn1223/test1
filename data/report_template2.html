@@ -1,0 +1,14 @@
+<html>
+
+<body>
+    <h1>{{ report_title }}</h1>
+    <p>생성 시각: {{ date }}</p>
+    <div class="report-table">
+        {{ table_html | safe }}
+        <!-- | safe는 
+        "여기에 들어오는 데이터는 이미 완벽한 HTML이니, 글자로 출력하지 말고 브라우저가 표로 렌더링하도록 허용해줘"라는 명령입니다. 
+        | safe가 없으면 문자열로 출력된다. -->
+    </div>
+</body>
+
+</html>
