@@ -6,6 +6,7 @@ from dataclasses import dataclass
 # =========================
 # 외부 데이터 구조
 # =========================
+# =========================
 
 class ProductDict(TypedDict):
     id: int
@@ -16,7 +17,7 @@ class ProductDict(TypedDict):
 
 api_data: ProductDict = {
     "id": 1,
-    "name": "맥북",
+    "name": "맥북", 
     "price": 1500000,
     "stock": 10
 }
